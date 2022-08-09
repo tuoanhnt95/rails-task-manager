@@ -7,8 +7,10 @@
     <%= f.label :details %>
     <%= f.text_area :details %>
   </div>
-  <div class="form-control">
-    <%= f.check_box :completed %>
-  </div>
+  <% if !@task.new_record? %>
+    <div class="form-control">
+      <%= f.check_box :completed %>
+    </div>
+  <% end %>
   <%= f.submit :Submit, class: 'btn btn-primary' %>
 <% end %>
